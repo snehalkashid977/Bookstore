@@ -14,12 +14,10 @@ def version, mvnCmd = "mvn -s templates/cicd-settings-nexus3.xml"
             steps
              {
               git branch: 'master', url: 'https://github.com/snehalkashid977/Bookstore.git'
-              script {
-                  def pom = readMavenPom file: 'pom.xml'
-                  version = pom.version
-              }
-              sh "mvn clean install -DskipTests=true"
-            }
+                    withMaven(maven: 'mvn') {
+                    sh "mvn clean install -DskipTests=true"
+                    }
+             }
           }
           stage('Test')
           {
