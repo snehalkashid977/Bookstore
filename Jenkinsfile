@@ -154,5 +154,6 @@ def version, mvnCmd = "mvn -s templates/cicd-settings-nexus3.xml"
             }
           }
         }
+        */
       }
-*/
+
