@@ -13,7 +13,7 @@ def version, mvnCmd = "mvn -s templates/cicd-settings-nexus3.xml"
           {
             steps
              {
-              git branch: 'openshift-aws', url: 'https://github.com/pavankjadda/BookStore.git'
+              git branch: 'openshift-aws', url: 'https://github.com/snehalkashid977/Bookstore.git'
               script {
                   def pom = readMavenPom file: 'pom.xml'
                   version = pom.version
@@ -29,6 +29,7 @@ def version, mvnCmd = "mvn -s templates/cicd-settings-nexus3.xml"
               //step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
             }
           }
+          /*    
           stage('Code Analysis')
           {
             steps
@@ -39,12 +40,12 @@ def version, mvnCmd = "mvn -s templates/cicd-settings-nexus3.xml"
               }
             }
           }
-          /*
+          
           stage('Archive App') {
             steps {
               sh "${mvnCmd} deploy -DskipTests=true -P nexus3"
             }
-          }*/
+          }
 
           stage('Create Image Builder') {
 
@@ -154,3 +155,4 @@ def version, mvnCmd = "mvn -s templates/cicd-settings-nexus3.xml"
           }
         }
       }
+*/
