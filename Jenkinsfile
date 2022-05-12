@@ -13,7 +13,7 @@ def version, mvnCmd = "mvn -s templates/cicd-settings-nexus3.xml"
           {
             steps
              {
-              git branch: 'openshift-aws', url: 'https://github.com/snehalkashid977/Bookstore.git'
+              git branch: 'master', url: 'https://github.com/snehalkashid977/Bookstore.git'
               script {
                   def pom = readMavenPom file: 'pom.xml'
                   version = pom.version
