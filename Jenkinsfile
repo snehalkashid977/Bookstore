@@ -23,8 +23,8 @@ def version, mvnCmd = "mvn -s templates/cicd-settings-nexus3.xml"
           {
             steps
             {
-              sh "${mvnCmd} test -Dspring.profiles.active=test"
-              //step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+              sh "mvn test -Dspring.profiles.active=test"
+              step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
             }
           }
         }
