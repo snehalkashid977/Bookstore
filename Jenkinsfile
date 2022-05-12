@@ -29,6 +29,8 @@ def version, mvnCmd = "mvn -s templates/cicd-settings-nexus3.xml"
               //step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
             }
           }
+        }
+      }
           /*    
           stage('Code Analysis')
           {
@@ -154,6 +156,5 @@ def version, mvnCmd = "mvn -s templates/cicd-settings-nexus3.xml"
             }
           }
         }
-        */
       }
-
+  */
